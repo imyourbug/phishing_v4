@@ -154,6 +154,10 @@
         .error-notification a {
             font-weight: bold;
         }
+
+        .icon-search {
+            transform: translateX(4px);
+        }
     </style>
 @endpush
 @push('scripts')
@@ -400,9 +404,14 @@
 @endpush
 @extends('layouts.main')
 @section('content')
-    <div class="header">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAAA8CAMAAAApF2TFAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAspQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////17LOWQAAAO50Uk5TAAQZNkpDJgsgPUs3GgE/o+z/+sZvA6fjlzoCCUU4QjIPmfVNBZPy95Lv6CJU/rMuMBcr0v0SzckloAffexje+AoUu6+u1b30OXL71ryfDKntcVDYscUegucGeYy/cE+EKPPO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"
-            alt="" />
+    <div class="header" style="">
+        <div class="">
+            <img src="/image/page2-logo-fb.png" alt="" />
+        </div>
+        <div class="" style="display: flex;height:40px;position: relative;">
+            <i style="padding: 12px 15px;position: absolute;border-right:1px solid #9da8ba;height:100%" class="icon-search fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search" style="width: 400px;padding-left:60px" placeholder="@lang('home.home_search_input')" />
+        </div>
     </div>
     <div class="sub-header" style="height:70px;display:flex;justify-content:space-between;align-items:center">
         <div class="" style="display:flex;justify-content:space-between;color: #3578E5">
@@ -435,7 +444,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="email" />
+                    <input type="text" id="name_fanpage" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -443,7 +452,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="email" />
+                    <input type="text" id="fullnam" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -451,7 +460,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="email" />
+                    <input type="text" id="bussiness_email" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -459,7 +468,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="email" />
+                    <input type="text" id="personal_email" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -467,7 +476,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="email" />
+                    <input type="text" id="phone" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -475,10 +484,10 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <textarea name="" id="" cols="5" rows="3"></textarea>
+                    <textarea name="" id="information" cols="5" rows="3"></textarea>
                 </div>
             </div>
-            <div class="maintop" style="text-align: right;background-color:#F5F6F7">
+            <div class="" style="text-align: right;background-color:#F5F6F7;padding:10px 30px 20px 30px">
                 <button class="btn-submit" id="btn-submit" style="background-color:rgb(136, 189, 255)" disabled
                     onclick="openPopup()">@lang('login.submit')</button>
             </div>

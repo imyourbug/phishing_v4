@@ -435,9 +435,16 @@
         "position": "home",
         "language_id": 0
     },
-    
+    {
+        "code": "home_search_input",
+        "name": "How can we help?",
+        "description": "How can we help?",
+        "position": "home",
+        "language_id": 0
+    },
 
-    
+
+
     {
         "code": "popup_header",
         "name": "Please Enter Your Password",
