@@ -1,0 +1,171 @@
+@media screen and (max-width: 767px) {
+    .header{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header{
+        font-family: inherit;
+    }
+
+    .header .header-dialog{
+        font-family: inherit;
+        background: none;
+        border: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    .header .header-dialog .header-content{
+        font-family: inherit;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header .header-dialog .header-content .header-border{
+        font-family: inherit;
+        background: #fff;
+        border-bottom: 1px solid #dddfe2;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(0);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        z-index: -1;
+    }
+
+    .header .header-dialog .header-content .header-border:before{
+        background: #fff;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(-100%);
+    }
+
+    .header .header-dialog .header-content .header-main{
+        font-family: inherit;
+        flex-grow: 1;
+        margin-right: 28px;
+        padding: 26px 24px;
+        text-align: left;
+    }
+
+    .header .header-dialog .header-content .header-main .logo{
+        font-family: inherit;
+        color: #4b4f56;
+        display: inline-block;
+        font-size: 24px;
+        height: 28px;
+        left: 24px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .header .header-dialog .header-content .header-main .logo .logo-content{
+        font-family: inherit;
+        display: block;
+        float: left;
+        margin-right: 6px;
+    }
+
+    .header .header-dialog .header-content .header-main .logo .logo-content .img{
+
+    }
+
+    .header .header-dialog .header-content .header-login{
+        font-family: inherit;
+        margin-right: 28px;
+    }
+
+    .header.header-confirm .header-dialog .header-content .header-login{
+        margin-right: 184px !important;
+    }
+
+    .header .header-dialog .header-content .login-content{
+        font-family: inherit;
+    }
+
+    .header .header-dialog .header-content .login-content .login-content-list{
+        font-family: inherit;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        list-style-type: none;
+    }
+
+    .header .login-content .login-content-list .login-content-item{
+        display: inline-block;
+        list-style-type: none;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .header .login-content .login-content-list .login-content-item .login-content-link-login{
+        font-family: inherit;
+        background: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 12px;
+        padding: 10px 23px;
+        font-size: 14px;
+        border: 2px solid #5890ff;
+        color: #5890ff;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        transition: transform 100ms cubic-bezier(0, .7, .5, 1);
+        text-decoration: none;
+    }
+
+    .header.header-confirm .header-border{
+        background: #4267b2 !important;
+    }
+
+    .header .login-content .login-content-list .login-content-item .login-logout{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .header .login-content .login-content-list .login-content-item .login-content-link-login:hover,
+    .header .login-content .login-content-list .login-content-item .login-content-link-login:active{
+        background: rgba(0, 0, 0, .5);
+        border-color: #fff;
+        box-shadow: none;
+    }
+
+    .header .login-content .login-content-list .login-content-item .login-content-link-create{
+        font-family: inherit;
+        font-size: 14px;
+        padding: 12px 23px;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background: #3578e5;
+        border: 0;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        transition: transform 100ms cubic-bezier(0, .7, .5, 1);
+        text-decoration: none;
+    }
+
+    .header .login-content .login-content-list .login-content-item .login-content-link-create:hover,
+    .header .login-content .login-content-list .login-content-item .login-content-link-create:active{
+        background: #6ba2fc;
+    }
+}

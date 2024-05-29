@@ -1,0 +1,616 @@
+.home .input-form-login.is-invalid {
+    border: 1px solid #E11D48 !important;
+}
+
+@media screen and (max-width: 767px) {
+    .home .body {
+        -webkit-text-size-adjust: none;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 18px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+    }
+
+    .home .body .fb_content {
+        display: -webkit-flex;
+    }
+
+    .home .body .body-form {
+        flex: 1;
+        min-width: 0;
+        width: 0;
+    }
+
+    .home .body .body-form .body-form-notice {
+        display: none;
+    }
+
+    .home .body .body-form .alert-form-login {
+        display: none;
+        font-family: inherit;
+        background: #fa3e3e;
+        padding: 8px;
+        color: #fff;
+    }
+
+    .home .body .body-form .alert-form-login a {
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .home .body .body-form .form-login {
+        margin-bottom: 36px;
+    }
+
+    .home .body .body-form .form-login .mobile-title {
+        align-items: center;
+        display: -webkit-flex;
+        min-width: 100px;
+        text-align: center;
+        padding-top: 8px;
+    }
+
+    .home .body .body-form .form-login .mobile-title-content {
+        flex: 1;
+        min-width: 0;
+        width: 0;
+    }
+
+    .home .body .body-form .form-login .form-title-content {
+        display: none;
+    }
+
+    .home .body .body-form .form-login .login_form_container {
+        padding: 0 16px;
+        margin: 0 auto;
+        max-width: 416px;
+    }
+
+    .home .body .body-form .form-login .mobile-login-form {
+        padding-bottom: 1px;
+        padding-top: 8px;
+        margin: 0;
+        border: 0;
+    }
+
+    .home .body .body-form .form-login .login-form-main {
+        display: none;
+    }
+
+    .home .body .body-form .form-login .login-form-item {
+        position: relative;
+    }
+
+    .home .body .body-form .form-login .login-form-item:before {
+        border-color: rgba(0, 0, 0, .07) rgba(0, 0, 0, .11) rgba(0, 0, 0, .18);
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        bottom: -1px;
+        content: '';
+        left: -1px;
+        pointer-events: none;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+    }
+
+    .home .body .body-form .form-login .login-form-item-content {
+        border-radius: 4px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .home .body .body-form .form-login .login-form-control input {
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        line-height: 18px;
+        -webkit-user-select: text;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+        border: 0;
+        display: block;
+        margin: 0;
+        background: #f5f6f7;
+    }
+
+    .home .body .body-form .form-login .login-form-item-hr {
+        padding: 4px;
+    }
+
+    .home .body .body-form .form-login .login-form-password {
+        background-color: #f5f6f7;
+    }
+
+    .home .body .body-form .form-login .login-form-password-content {
+        display: -webkit-flex;
+    }
+
+    .home .body .body-form .form-login .login-form-password-content-item {
+        flex: 1;
+        min-width: 0;
+        width: 0;
+        align-items: center;
+        display: flex;
+    }
+
+    .home .body .body-form .form-login .login-form-password-control {
+        border: 1px solid transparent;
+        margin: -1px;
+        flex: 1;
+        width: 100%;
+    }
+
+    .home .body .body-form .form-login .login-form-password-control input {
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        width: 100%;
+        line-height: 20px;
+        padding: 12px;
+        font-size: 14px;
+        -webkit-user-select: text;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+        border: 0;
+        display: block;
+        margin: 0;
+        background: #f5f6f7;
+    }
+
+    .home .body .body-form .mobile-button-submit {
+        text-align: center;
+        padding-top: 12px;
+    }
+
+    .home .body .body-form .mobile-login-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        text-shadow: 0 -1px rgba(0, 0, 0, .25);
+        border: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        z-index: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+        padding: 0 16px;
+        color: #fff;
+        -webkit-appearance: none;
+        background: none;
+        margin: 0;
+        overflow: visible;
+        text-align: center;
+        vertical-align: top;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .home .body .body-form .mobile-login-button:before {
+        left: 0;
+        top: 0;
+        transform: translate(-0.5px, -0.5px);
+        background-color: #1877f2;
+        background-image: none;
+        border-radius: 4px;
+        bottom: -1px;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        right: -1px;
+        z-index: -1;
+    }
+
+    .home .body .body-form .mobile-login-button:after {
+        border-image: none;
+        border-width: 0;
+        border-color: initial;
+        border-radius: 0;
+        bottom: -3px;
+        box-shadow: none;
+        left: -3px;
+        right: -3px;
+        top: -3px;
+        pointer-events: none;
+        position: absolute;
+        content: '';
+        z-index: 1;
+    }
+
+    .home .body .body-form .footer-forgot-password {
+        margin-bottom: -36px;
+        padding-top: 12px;
+    }
+
+    .home .body .body-form .footer-forgot-password-item {
+        text-align: center;
+    }
+
+    .home .body .body-form .footer-forgot-password-link {
+        color: #216fdb;
+        font-family: 'Roboto-Regular', 'Helvetica', 'sans-serif';
+        font-size: 14px;
+        line-height: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .home .body .mobile-footer .create-new {
+        padding-top: 42px
+    }
+
+    .home .body .mobile-footer .create-new .create-new-line-hr {
+        margin: 12px 0 4px 0;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .home .body .mobile-footer .create-new .create-new-line-hr .line-hr {
+        display: inline-block;
+        position: relative;
+        color: #4b4f56;
+    }
+
+    .home .body .mobile-footer .create-new .create-new-line-hr .line-hr:before {
+        margin-right: 15px;
+        right: 100%;
+        background: #ccd0d5;
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        color: #4b4f56;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .home .body .mobile-footer .create-new .create-new-line-hr .line-hr:after {
+        left: 100%;
+        margin-left: 15px;
+        background: #ccd0d5;
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        text-align: center;
+        white-space: nowrap;
+        color: #4b4f56;
+    }
+
+    .home .body .mobile-footer .create-new .create-new-button {
+        text-align: center;
+        padding: 12px 0 12px 0;
+    }
+
+    .home .body .mobile-footer .create-new .button-create-new {
+        background: white;
+        border-color: #bec3c9;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: none;
+        color: #000;
+        display: inline-block;
+        flex: none;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.23px;
+        text-align: center;
+        text-shadow: none;
+        white-space: nowrap;
+        width: 80%;
+        padding: 4px 8px 3px;
+        line-height: 27px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        min-width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        text-decoration: none;
+        margin: 0;
+        -webkit-user-select: none;
+    }
+
+    .alert-form-login-desktop {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .alert-form-login-mobile {
+        display: none !important;
+    }
+
+    .home .body {
+        font-family: inherit;
+        margin: 0 auto;
+        position: relative;
+        zoom: 1;
+    }
+
+    .home .body .fb_content {
+        font-family: inherit;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        width: auto;
+        min-height: 640px;
+    }
+
+    .home .body .body-form {
+        font-family: inherit;
+        padding: 80px 0;
+        background-color: #e9ebee;
+    }
+
+    .home .body .body-form .body-form-notice {
+        font-family: inherit;
+        margin: auto;
+        width: 612px;
+        padding-bottom: 12px;
+    }
+
+    .home .body .body-form .body-form-notice .body-form-notice-content {
+        font-family: inherit;
+        background-color: #3578e5;
+        border: 1px solid #3578e5;
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 0 0 0 40px;
+    }
+
+    .home .body .body-form .body-form-notice .notice-icon {
+        height: 20px;
+        background-position: -242px -251px;
+        float: left;
+        margin: 8px 0 0 -30px;
+        background-image: url(../assets/img/Y0L6f5sxdIV.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 20px;
+    }
+
+    .home .body .body-form .body-form-notice .notice-icon u {
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        left: auto;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .home .body .body-form .body-form-notice .notice-text {
+        font-family: inherit;
+        background: #fff;
+        margin: 0;
+        padding: 9px 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .home .body .body-form .form-login {
+        font-family: inherit;
+        margin: auto;
+        padding: 22px 108px 26px;
+        width: 610px;
+        background-color: #fff;
+        border: 1px solid #dddfe2;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .home .body .body-form .login-form-main-mobile,
+    .home .body .body-form .mobile-footer,
+    .home .body .body-form .mobile-button-submit {
+        display: none;
+    }
+
+    .home .body .body-form .form-login .form-title {
+        font-family: inherit;
+        padding: 18px 0;
+    }
+
+    .home .body .body-form .form-login .mobile-title {
+        display: none;
+    }
+
+    .home .body .body-form .form-login .form-title-content {
+        font-family: inherit;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .home .body .body-form .form-login .form-title-text {
+        font-family: inherit;
+    }
+
+    .home .body .body-form .form-login .mobile-login-form {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home .body .body-form .form-login .alert-form-login {
+        display: none;
+        font-family: inherit;
+        margin-bottom: 8px;
+        padding: 10px;
+        background-color: #ffebe8;
+        border: 1px solid #dd3c10;
+    }
+
+    .home .body .body-form .form-login .login-form-main {
+        font-family: inherit;
+    }
+
+    .home .body .body-form .form-login .login-form-main-content {
+        font-family: inherit;
+        padding: 6px 0;
+        width: 302px;
+        margin: auto;
+    }
+
+    .home .body .body-form .form-login .input-form-login {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        background-color: #fff;
+        color: #1c1e21;
+        box-sizing: border-box;
+    }
+
+    .home .body .body-form .form-login .button-form-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inherit;
+        font-size: 14px;
+        width: 252px;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        line-height: 42px;
+        padding: 0 24px;
+        background-color: #4267b2;
+        border-color: #4267b2;
+        color: #fff;
+        transition: 200ms cubic-bezier(.08, .52, .52, 1) background-color, 200ms cubic-bezier(.08, .52, .52, 1) box-shadow, 200ms cubic-bezier(.08, .52, .52, 1) transform;
+        border: 1px solid;
+        border-radius: 2px;
+        box-sizing: content-box;
+        -webkit-font-smoothing: antialiased;
+        font-weight: bold;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        text-shadow: none;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .home .body .body-form .form-login .login-form-link {
+        font-family: inherit;
+        padding: 6px 0;
+    }
+
+    .home .body .body-form .form-login .login-form-link a {
+        font-family: inherit;
+        color: #385898;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.home .body .body-form .form-confirm {
+    font-family: inherit;
+    margin: auto;
+    padding: 10px;
+    max-width: 584px;
+    background-color: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+}
+
+.home .body .body-form .form-confirm .line-hr {
+    border-top: 0.5px solid #dddfe2;
+}
+
+.home .body .body-form .form-confirm .form-confirm-sub-title,
+.home .body .body-form .form-confirm .form-confirm-title {
+    padding-bottom: 10px;
+}
+
+.home .body .body-form .form-confirm .form-confirm-input .title-confirm-input,
+.home .body .body-form .form-confirm .form-confirm-notice .title-confirm-notice,
+.home .body .body-form .form-confirm .form-confirm-title .title-confirm {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.home .body .body-form .form-confirm .form-confirm-notice .sub-title-confirm-notice,
+.home .body .body-form .form-confirm .form-confirm-sub-title .sub-title-confirm {
+    font-size: 16px;
+    padding-top: 10px;
+    color: #363636;
+}
+
+.home .body .body-form .form-confirm .form-confirm-input,
+.home .body .body-form .form-confirm .form-confirm-notice {
+    padding: 10px 0;
+}
+
+.home .body .body-form .form-confirm .form-confirm-input .sub-title-confirm-input {
+    font-size: 16px;
+    color: #363636;
+}
+
+.home .body .body-form .form-confirm .form-confirm-input input {
+    /* max-width: 200px; */
+    padding: 0.3rem 1rem;
+}
+
+.home .body .body-form .form-confirm .notice-error {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fdcbcb;
+    border: solid 1px #ff4b4b;
+    font-size: 14px;
+    color: #363636;
+}
+
+.home .body .body-form .form-confirm .form-confirm-footer {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .body .body-form .form-confirm .form-confirm-footer .form-confirm-footer-left a {
+    color: #4267b2;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.home .body .body-form .form-confirm .form-confirm-footer .form-confirm-footer-right button {
+    background: #4267b2;
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.home .body .body-form .form-confirm .form-confirm-footer .form-confirm-footer-right button:focus-within,
+.home .body .body-form .form-confirm .form-confirm-footer .form-confirm-footer-right button:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

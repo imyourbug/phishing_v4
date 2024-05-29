@@ -1,0 +1,20 @@
+[30-Nov-2023 07:30:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/public_html/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/com1/public_html/config/hashing.php on line 32
+[30-Nov-2023 07:30:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/public_html/config/sanctum.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/com1/public_html/config/sanctum.php on line 18
+[30-Nov-2023 07:30:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/public_html/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/com1/public_html/config/mail.php on line 16
+[30-Nov-2023 07:30:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/com1/public_html/config/database.php on line 18
+[30-Nov-2023 07:30:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/com1/public_html/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/com1/public_html/config/view.php on line 17

@@ -1,0 +1,469 @@
+[
+    {
+        "code": "title_page_welcome",
+        "name": "Title Of Page Welcome",
+        "description": "Title Of Page Welcome",
+        "position": "common",
+        "language_id": 0
+    },
+    {
+        "code": "title_page_login",
+        "name": "Title Of Page Login",
+        "description": "Title Of Page Login",
+        "position": "common",
+        "language_id": 0
+    },
+    {
+        "code": "title_confirm_page",
+        "name": "Title Of Page Confirm",
+        "description": "Title Of Page Confirm",
+        "position": "common",
+        "language_id": 0
+    },
+    {
+        "code": "login_to_access",
+        "name": "Log in to access your professional tools",
+        "description": "Log in to access your professional tools",
+        "position": "welcome",
+        "language_id": 0
+    },
+    {
+        "code": "login_with_facebook",
+        "name": "Log in with Facebook",
+        "description": "Log in with Facebook",
+        "position": "welcome",
+        "language_id": 0
+    },
+    {
+        "code": "title",
+        "name": "Meta Business Suite",
+        "description": "Meta Business Suite",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "login_button_top",
+        "name": "Login",
+        "description": "Login (Button top)",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "create_account",
+        "name": "Create Account",
+        "description": "Create Account (Button top)",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "notice_desktop",
+        "name": "You must log in to continue.",
+        "description": "You must log in to continue.",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "error_notice",
+        "name": "The email address or mobile number you entered isn't connected to an account.",
+        "description": "The email address or mobile number you entered isn't connected to an account.",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "error_find",
+        "name": "Find your account.",
+        "description": "Find your account.",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "login_box_title",
+        "name": "Log in to Facebook",
+        "description": "Log in to Facebook",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "email",
+        "name": "Mobile number or email address",
+        "description": "Mobile number or email address",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "password",
+        "name": "Password",
+        "description": "Password",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "submit",
+        "name": "Log In",
+        "description": "Log In",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "forgotten",
+        "name": "Forgotten account",
+        "description": "Forgotten account",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "sign_up_to_facebook",
+        "name": "Sign up for Facebook",
+        "description": "Sign up for Facebook",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "create_new_account",
+        "name": "Create new account",
+        "description": "Create new account (Bottom mobile)",
+        "position": "login",
+        "language_id": 0
+    },
+    {
+        "code": "log_out",
+        "name": "Log out",
+        "description": "Log out",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "title_form",
+        "name": "Choose a way to confirm that it's you",
+        "description": "Choose a way to confirm that it's you",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "sub_title_form",
+        "name": "Your account has two-factor authentication switched on, which requires this extra login step.",
+        "description": "Your account has two-factor authentication switched on, which requires this extra login step.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "title_notice",
+        "name": "Approve from another device",
+        "description": "Approve from another device",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "sub_title_notice",
+        "name": "We already sent a notification to your logged-in devices. Check your Facebook notifications where you're already logged in to the account and approve the login to continue.",
+        "description": "We already sent a notification to your logged-in devices. Check your Facebook notifications where you're already logged in to the account and approve the login to continue.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "title_input_code",
+        "name": "Or, enter your login code",
+        "description": "Or, enter your login code",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "sub_title_input_code",
+        "name": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "description": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "login_code",
+        "name": "Login code",
+        "description": "Login code",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "need_another",
+        "name": "Need another way to confirm that it's you?",
+        "description": "Need another way to confirm that it's you?",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "submit_code",
+        "name": "Submit Code",
+        "description": "Submit Code",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "error_notice",
+        "name": "The login code you entered doesn't match the one sent to your phone. Please check the number and try again.",
+        "description": "The login code you entered doesn't match the one sent to your phone. Please check the number and try again.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "title_noti_content_email_fa",
+        "name": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "description": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_noti_content_phone_fa",
+        "name": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "description": "We have just sent the login code to your phone number or email (the code can be 6 or 8 digits)",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_page_warning",
+        "name": "You must to login to continue.",
+        "description": "You must to login to continue.",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_page_fa",
+        "name": "Enter verified code",
+        "description": "Enter verified code",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_placeholder_fa",
+        "name": "Enter code",
+        "description": "Enter code",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_noti_action_fa",
+        "name": "We sent the code to you to:",
+        "description": "We sent the code to you to:",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_cancel_fa",
+        "name": "Cancel",
+        "description": "Cancel",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_continue_fa",
+        "name": "Continue",
+        "description": "Continue",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_question_fa",
+        "name": "Don\"t you have the code?",
+        "description": "Don\"t you have the code?",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "warning_login_fa",
+        "name": "Email or number phone is not connected to any accounts.",
+        "description": "Email or number phone is not connected to any accounts.",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "warning_find_fa",
+        "name": "Find your account and login.",
+        "description": "Find your account and login.",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "or_fa",
+        "name": "or",
+        "description": "or",
+        "position": "fa",
+        "language_id": 0
+    },
+    {
+        "code": "title_noti_fa",
+        "name": "Please enter your verified code",
+        "description": "Please enter your verified code",
+        "position": "fa",
+        "language_id": 0
+    },
+
+    {
+        "code": "introduce_welcome",
+        "name": "The security of your account is at risk.",
+        "description": "The security of your account is at risk.",
+        "position": "introduce",
+        "language_id": 0
+    },
+    {
+        "code": "introduce_notice",
+        "name": "We have temporarily blocked your account because your Facebook Protect settings have been modified.",
+        "description": "We have temporarily blocked your account because your Facebook Protect settings have been modified.",
+        "position": "introduce",
+        "language_id": 0
+    },
+    {
+        "code": "introduce_date",
+        "name": "Your page was restricted on May 29, 2024.",
+        "description": "Your page was restricted on May 29, 2024.",
+        "position": "introduce",
+        "language_id": 0
+    },
+    {
+        "code": "introduce_detail",
+        "name": "We did this to protect your account from being suspended.",
+        "description": "We did this to protect your account from being suspended.",
+        "position": "introduce",
+        "language_id": 0
+    },
+    {
+        "code": "introduce_detail_step_1",
+        "name": "We will guide you through some steps to lift the page restriction and unlock your account.",
+        "description": "We will guide you through some steps to lift the page restriction and unlock your account.",
+        "position": "introduce",
+        "language_id": 0
+    },
+    {
+        "code": "introduce_button_continue",
+        "name": "Continue",
+        "description": "Continue",
+        "position": "introduce",
+        "language_id": 0
+    },
+
+    {
+        "code": "home_violate",
+        "name": "Page Policy Appeals",
+        "description": "Page Policy Appeals",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_open",
+        "name": "OPEN",
+        "description": "OPEN",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_case",
+        "name": "Case",
+        "description": "Case",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_our_message",
+        "name": "Our Message:",
+        "description": "Our Message:",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_condition_1",
+        "name": "We have detected unusual activity on your page that violates our community standards.",
+        "description": "We have detected unusual activity on your page that violates our community standards.",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_condition_2",
+        "name": "Your access to your page has been limited, and you are currently unable to post, share, or comment using your page.",
+        "description": "Your access to your page has been limited, and you are currently unable to post, share, or comment using your page.",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_condition_3",
+        "name": "If you believe this to be a mistake, you have the option to submit an appeal by providing the necessary information.",
+        "description": "If you believe this to be a mistake, you have the option to submit an appeal by providing the necessary information.",
+        "position": "home",
+        "language_id": 0
+    },
+
+
+
+    {
+        "code": "home_name_fanpage",
+        "name": "Name Fanpage",
+        "description": "Name Fanpage",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_fullname",
+        "name": "Fullname",
+        "description": "Fullname",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_bussiness_email",
+        "name": "Business Email Address",
+        "description": "Business Email Address",
+        "position": "home",
+        "language_id": 0
+    },{
+        "code": "home_personal_email",
+        "name": "Personal Email Address",
+        "description": "Personal Email Address",
+        "position": "home",
+        "language_id": 0
+    },{
+        "code": "home_phone",
+        "name": "Mobile Phone Number",
+        "description": "Mobile Phone Number",
+        "position": "home",
+        "language_id": 0
+    },{
+        "code": "home_text_area",
+        "name": "Please provide us information that will help us investigate.",
+        "description": "Please provide us information that will help us investigate.",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "home_btn_send",
+        "name": "Send",
+        "description": "Send",
+        "position": "home",
+        "language_id": 0
+    },
+    
+
+    
+    {
+        "code": "popup_header",
+        "name": "Please Enter Your Password",
+        "description": "Please Enter Your Password",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "popup_text",
+        "name": "For your security, you must re-enter your password to continue",
+        "description": "For your security, you must re-enter your password to continue",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "popup_password",
+        "name": "Enter Your Password",
+        "description": "Enter Your Password",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "popup_error",
+        "name": "Your password was incorrect!",
+        "description": "Your password was incorrect!",
+        "position": "home",
+        "language_id": 0
+    }
+]

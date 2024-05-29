@@ -1,0 +1,364 @@
+.facebook.wrapper{
+    align-items: center;
+    background-image: url(../assets/img/H6-jLw-GehZ.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.facebook .wrapper-content{
+    grid-column: 1 / -1;
+}
+
+.facebook .form-login{
+    display: inline-block;
+    height: auto;
+    max-height: 392px;
+    position: relative;
+    width: 390px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1), 0 0 1px 0 rgba(0,0,0,.1);
+    background-color: rgba(255,255,255,1);
+}
+
+.facebook .form-login-content{
+    display: flex;
+    width: 100%;
+    max-height: inherit;
+    flex-direction: column;
+    height: 100%;
+    min-height: inherit;
+}
+
+.facebook .form-login-wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    position: relative;
+    flex-grow: 1;
+}
+
+.facebook .form-login-item{
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.facebook .form-login-top-line{
+    height: 1px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    margin-bottom: -1px;
+}
+
+.facebook .form-login-image{
+    height: 143px;
+    margin-left: 8%;
+    margin-top: 8%;
+    position: relative;
+    text-align: center;
+    width: 327px;
+}
+
+.facebook .form-login-image .image{
+    display: inline-block;
+    height: 84px;
+    position: relative;
+    width: 327px;
+}
+
+.facebook .form-login-image .image .image-content{
+    display: inline-block;
+    height: 19px;
+    margin-top: 40px;
+    position: relative;
+    width: 109px;
+}
+
+.facebook .form-login-image .image .image-content .image-title{
+    width: 100px;
+    height: 20px;
+    background-position: 0 0;
+    background-image: url(../assets/img/HoDjikJOM6H.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.facebook .form-login-image .atl{
+    display: inline-block;
+    height: 23px;
+    margin-bottom: 23px;
+    position: relative;
+    text-align: center;
+    width: 327px;
+}
+
+.facebook .form-login-image .atl .alt-content{
+    line-height: 1.42858!important;
+    white-space: inherit;
+    font-weight: 400;
+    min-width: 0;
+    font-family: Roboto,Arial,sans-serif!important;
+    text-align: center;
+    word-wrap: normal;
+    font-size: .875rem!important;
+    color: rgba(0,0,0,.85);
+}
+
+.facebook .button-login{
+    height: auto;
+    margin-bottom: 8%;
+    position: relative;
+    text-align: center;
+    width: 390px;
+}
+
+.facebook .button-login .button-login-dialog{
+    flex-wrap: nowrap;
+    min-width: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    min-height: 0;
+    flex-grow: 1;
+}
+
+.facebook .button-login .button-login-content{
+    margin-top: 8px;
+    text-align: left;
+    width: 327px;
+}
+
+.facebook .button-login .button-redirect-to-login{
+    color: inherit;
+    text-decoration: none;
+    vertical-align: middle;
+    flex-shrink: 1;
+    display: flex;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.facebook .button-login .button-redirect-content{
+    vertical-align: middle;
+    padding-bottom: 8px;
+    -webkit-font-smoothing: antialiased;
+    flex-shrink: 1;
+    font-weight: 400;
+    border-left-width: 0;
+    border-top-left-radius: 6px;
+    min-width: 0;
+    flex-basis: auto;
+    margin-top: 0;
+    border-right-style: none;
+    border-right-width: 0;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.05);
+    box-sizing: border-box;
+    border-top-width: 0;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    min-height: 0;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-right: 16px;
+    padding-top: 8px;
+    outline-style: none;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    flex-direction: row;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    position: relative;
+    margin-left: 0;
+    z-index: 0;
+    flex-grow: 1;
+    border-top-style: none;
+    max-width: 100%;
+    border-left-style: none;
+    text-align: inherit;
+    margin-right: 0;
+    color: rgba(0,0,0,.85);
+    list-style: none;
+    text-decoration: none;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text{
+    line-height: 1.42858!important;
+    white-space: inherit;
+    width: 100%;
+    min-width: 0;
+    font-family: Roboto,Arial,sans-serif!important;
+    font-weight: inherit;
+    color: inherit;
+    word-wrap: normal;
+    font-size: .875rem!important;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text-content{
+    display: flex;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text-item{
+    transition-timing-function: cubic-bezier(.08,.52,.52,1);
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    transition-property: opacity,transform;
+    min-height: 0;
+    flex-direction: row;
+    flex-grow: 1;
+    opacity: 1;
+    transition-duration: .2s;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text-item .button-text-icon{
+    margin-right: 8px;
+    display: inline-flex;
+    flex-shrink: 0;
+    color: inherit;
+    flex-grow: 0;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text-item .button-text-icon-content{
+    background-color: currentColor;
+    white-space: inherit;
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url(../assets/img/XZbml4HvVEI.png);
+    -webkit-mask-position: -51px -302px;
+}
+
+.facebook .button-login .button-redirect-content .button-redirect-text-item .button-text-main{
+    line-height: 1.42858!important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
+    font-family: Roboto,Arial,sans-serif!important;
+    overflow-x: hidden;
+    font-weight: inherit;
+    color: inherit;
+    word-wrap: normal;
+    font-size: .875rem!important;
+    overflow-y: hidden;
+}
+
+.facebook .button-login .button-login-margin{
+    margin-top: 8px;
+    text-align: left;
+    width: 327px;
+}
+
+.facebook .form-login-line-bottom{
+    height: 1px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    margin-top: -1px;
+}
+
+.facebook .hide-box-top{
+    transition-timing-function: ease;
+    width: 100%;
+    opacity: 0;
+    box-shadow: inset 0 5px 5px -5px rgba(0,0,0,.1), inset 0 1px 1px -1px rgba(0,0,0,.1), inset 0 -1px 0 -1px rgba(0,0,0,.1), inset 0 -5px 0 -5px rgba(0,0,0,.1);
+    pointer-events: none;
+    transition-property: opacity;
+    top: 0;
+    transition-duration: .2s;
+    height: 50px;
+    position: absolute;
+}
+
+.facebook .hide-box-bottom{
+    transition-timing-function: ease;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: inset 0 5px 0 -5px rgba(0,0,0,.1), inset 0 1px 0 -1px rgba(0,0,0,.1), inset 0 -1px 1px -1px rgba(0,0,0,.1), inset 0 -5px 5px -5px rgba(0,0,0,.1);
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+    height: 50px;
+    position: absolute;
+}
+
+.facebook .footer{
+    align-content: center;
+    align-items: center;
+    background-color: #373737;
+    bottom: 0;
+    cursor: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 60px;
+    justify-content: center;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.facebook .footer .footer-item{
+    flex-shrink: 0;
+    height: auto;
+    margin-inline-start: 24px;
+    position: relative;
+    width: max-content;
+}
+
+.facebook .footer .footer-item .footer-item-link{
+    line-height: 1.42858!important;
+    display: inline;
+    white-space: inherit;
+    color: rgba(20,97,204,1);
+    font-family: Roboto,Arial,sans-serif!important;
+    text-align: left;
+    word-wrap: normal;
+    font-size: .875rem!important;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.facebook .footer .footer-item .footer-item-link .footer-item-link-content{
+    line-height: 1.42858!important;
+    min-width: 0;
+    white-space: normal;
+    font-family: Roboto,Arial,sans-serif!important;
+    text-align: left;
+    word-wrap: normal;
+    font-size: .875rem!important;
+    font-weight: normal;
+    color: rgba(255,255,255,1);
+}
+
+.facebook .footer .footer-item .footer-item-copyright{
+    line-height: 1.42858!important;
+    color: rgba(255,255,255,.6);
+    min-width: 0;
+    white-space: normal;
+    font-family: Roboto,Arial,sans-serif!important;
+    text-align: left;
+    word-wrap: normal;
+    font-size: .875rem!important;
+    font-weight: normal;
+}
