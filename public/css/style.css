@@ -2,6 +2,10 @@ a {
     text-decoration: none;
 }
 
+html {
+    background-color: #EFEFEF !important;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,11 +17,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #efefef !important;
-}
-
-html {
-    background-color: #efefef !important;
 }
 
 .logo {
@@ -729,11 +728,11 @@ p {
 }
 
 .header {
-    padding: 8px 3rem;
+    /* padding: 8px 3rem; */
     height: 80px;
     background-color: #355797;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -756,14 +755,13 @@ p {
     border-color: initial;
     border-image: none;
     border-image: initial;
-    border-radius: 0.25rem;
+    border-radius: 10px;
     box-shadow: 0 1px 2px #0003;
     display: flex;
     flex-direction: column;
     margin: 0px auto 30px;
-    margin-right: auto;
+    margin-left: 10px;
     margin-bottom: 30px;
-    margin-left: auto;
     max-width: 94%;
     min-width: 0;
     position: relative;

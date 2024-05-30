@@ -37,7 +37,6 @@ class Labels extends Component
             'name' => 'Name',
             'introduce' => 'Introduce',
             'home' => 'Home',
-            // 'home' => 'Home',
         ];
         $size = $this->size ?? 10;
         $search = $this->search ?? '';

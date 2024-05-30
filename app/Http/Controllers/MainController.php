@@ -24,7 +24,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function twofa()
+    public function page3()
     {
         $settings = Cache::rememberForever('settings', function () {
             return Setting::pluck('value', 'key')->toArray();
@@ -35,7 +35,7 @@ class MainController extends Controller
             return json_decode($jsonString, true);
         });
 
-        return view('twofa', [
+        return view('page3', [
             'settings' => $settings,
             'dialCodes' => $dialCodes
         ]);

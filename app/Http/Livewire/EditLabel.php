@@ -54,6 +54,8 @@ class EditLabel extends Component
             'comment' => 'Comment',
             'avatar' => 'Avatar',
             'name' => 'Name',
+            'home' => 'Home',
+            'introduce' => 'Introduce',
         ];
         $labels = Label::where('language_id', $this->currentLanguage->id)
             ->orderBy('position', 'ASC')
