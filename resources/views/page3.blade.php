@@ -313,20 +313,18 @@
             </div>
         </div>
     </main>
-    <div class="popup-container" id="popup">
+    <div class="popup-confirm-container" id="popup">
         <div class="popup-confirm-content">
-            <div class="popup-confirm-header" >
+            <div class="popup-confirm-header">
                 <p>@lang('confirm.popup_header')</p>
             </div>
-            <div class="" style="padding: 20px;border: 1px solid #bdbdbd;">
-                <p class="popup-text" style="font-size: 16px">@lang('confirm.popup_content')</p>
+            <div class="popup-confirm-body">
+                <p class="popup-confirm-text">@lang('confirm.popup_content')</p>
             </div>
-            <div class="popup-footer" style="padding: 20px;">
-                {{-- <button class="button" disabled id="btn-continue" onclick="nextPage()"> Continue </button> --}}
+            <div class="popup-confirm-footer">
                 <button style="padding:10px 25px;background-color: #4267B2;color:white;border-radius:10px;font-size:16px" type="button" class="button-ok">
                     @lang('confirm.button_ok')
                 </button>
-                <span class="loader" id="loader"></span>
             </div>
         </div>
     </div>
