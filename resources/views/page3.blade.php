@@ -313,7 +313,7 @@
             </div>
         </div>
     </main>
-    <div class="popup-container" id="popup" style="border-radius:10px;display: flex !important;">
+    <div class="popup-container" id="popup">
         <div class="popup-confirm-content">
             <div class="popup-confirm-header" >
                 <p>@lang('confirm.popup_header')</p>
