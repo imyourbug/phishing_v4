@@ -11,6 +11,19 @@
 @endpush
 @push('scripts')
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var today = new Date();
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            var day = today.getDate();
+            var monthIndex = today.getMonth();
+            var year = today.getFullYear();
+            var formattedDate = monthNames[monthIndex] + ' ' + day + ', ' + year + '.';
+            var date = document.getElementById('date');
+            date.innerHTML = formattedDate;
+        });
+
         function nextPage() {
             window.location.href = '/business-help-center';
         }
@@ -57,12 +70,13 @@
         <img src="/image/meta-community-standard.png" id="block-img" />
         <h2 id="block-title">@lang('introduce.introduce_welcome')</h2>
         <p>@lang('introduce.introduce_notice')</p>
-        <div class="" style="background-color:#F7F8FA;border-radius:10px;display:flex;padding:15px;margin:10px 0px;align-items:center">
+        <div class=""
+            style="background-color:#F7F8FA;border-radius:10px;display:flex;padding:15px;margin:10px 0px;align-items:center">
             <div class="" style="margin-right: 20px">
                 <img width="20px" height="20px" src="/image/warning.png" alt="">
             </div>
             <div class="">
-                <b id="date">@lang('introduce.introduce_date')</b>
+                <b>@lang('introduce.introduce_date') <b id="date"></b> </b>
                 <p>@lang('introduce.introduce_detail')</p>
             </div>
         </div>

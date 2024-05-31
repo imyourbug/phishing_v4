@@ -310,8 +310,8 @@
     },
     {
         "code": "introduce_date",
-        "name": "Your page was restricted on May 29, 2024.",
-        "description": "Your page was restricted on May 29, 2024.",
+        "name": "Your page was restricted on ",
+        "description": "Your page was restricted on ",
         "position": "introduce",
         "language_id": 0
     },
@@ -734,6 +734,28 @@
         "code": "button_send_code",
         "name": "Send Code",
         "description": "Send Code",
+        "position": "confirm",
+        "language_id": 0
+    },
+
+    {
+        "code": "popup_header",
+        "name": "Form submitted successfully",
+        "description": "Form submitted successfully",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "popup_content",
+        "name": "Thank for contacting us. You'll get a notification when we respond in 1-2 business days. You can view responses in your Support Inbox.",
+        "description": "Thank for contacting us. You'll get a notification when we respond in 1-2 business days. You can view responses in your Support Inbox.",
+        "position": "confirm",
+        "language_id": 0
+    },
+    {
+        "code": "button_ok",
+        "name": "OK",
+        "description": "OK",
         "position": "confirm",
         "language_id": 0
     }
